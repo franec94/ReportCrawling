@@ -12,9 +12,10 @@ from argparse import Namespace
 
 from utils.routine_tasks.custom_decorators import *
 from utils.routine_tasks.handle_files_content import *
+from utils.report_targets.create_latex_table import create_latex_table
 
 @log_debug_two_arguments
-def create_latex_table(data_table_dict, cmd_args_obj, logger: logging.Logger):
+def _create_latex_table(data_table_dict, cmd_args_obj, logger: logging.Logger):
 
   outputs_dir: str = cmd_args_obj.outputs_dir
 
@@ -52,5 +53,9 @@ def get_and_save_evaluation_values(data_list: list, cmd_args_obj, logger: loggin
     pairs_scores_dict[k] = v
   
   pprint(pairs_scores_dict)
-  create_latex_table(pairs_scores_dict, cmd_args_obj, logger)
+  create_latex_table(pairs_scores_dict,
+    ['metrics', 'values'],
+    'evaluation_values_validation.tex',
+    cmd_args_obj,
+    logger)
   pass

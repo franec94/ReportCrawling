@@ -12,9 +12,10 @@ from argparse import Namespace
 
 from utils.routine_tasks.custom_decorators import *
 from utils.routine_tasks.handle_files_content import *
+from utils.report_targets.create_latex_table import create_latex_table
 
 @log_debug_two_arguments
-def create_latex_table(data_table_dict, cmd_args_obj, logger: logging.Logger):
+def _create_latex_table(data_table_dict, cmd_args_obj, logger: logging.Logger):
 
   outputs_dir: str = cmd_args_obj.outputs_dir
 
@@ -63,5 +64,10 @@ def get_and_save_namespace_obj(data_list: list, cmd_args_obj, logger: logging.Lo
     'namespace_values.txt'),
     logger)
 
-  create_latex_table(name_space_dict, cmd_args_obj, logger)
+  create_latex_table(
+    name_space_dict,
+    ['args', 'values'],
+    'namespace.tex',
+    cmd_args_obj,
+    logger)
   pass

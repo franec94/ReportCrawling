@@ -10,8 +10,9 @@ from argparse import Namespace
 
 from utils.routine_tasks.custom_decorators import *
 from utils.routine_tasks.handle_files_content import *
-from utils.handle_namespace import get_and_save_namespace_obj
-from utils.handle_evaluation_values import  get_and_save_evaluation_values
+from utils.report_targets.handle_namespace import get_and_save_namespace_obj
+from utils.report_targets.handle_evaluation_values import  get_and_save_evaluation_values
+from utils.report_targets.handle_architecture_params import get_and_save_network_params
 
 @log_debug_two_arguments
 def _process_file(file_name: str, cmd_args_obj, logger: logging.Logger):
@@ -21,7 +22,7 @@ def _process_file(file_name: str, cmd_args_obj, logger: logging.Logger):
     cmd_args_obj,
     logger)
 
-  get_and_save_evaluation_values(data_list,
+  get_and_save_network_params(data_list,
     cmd_args_obj,
     logger)
   pass

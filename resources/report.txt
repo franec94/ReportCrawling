@@ -1,0 +1,81 @@
+logger initialization done!
+Namespace(batch_size=8, create_spredsheet_report=False, early_stopping_epoch=None, experimental_mode=False, feature_engeneering=None, load_network='WrappedRawModel', lr=0.001, network_parameters='models/base_line_architectures/jsons/lstm_baseline_model.json', num_epochs=25, onehot_flag=False, output_dir='/content/drive/My Drive/bioinformatics/reports/2020_02_02/train_22_18_40', path_source_data='/content/drive/My Drive/bioinformatics/data-bioinformatics/bins_translated', pretrained_model=None, seed=1234, sequence_type='dna', steps=None, test=False, train=False, validation=True)
+
+{
+    "maxlen": 1000,
+    "vocab_size": 5,
+    "embedding_size": 5,
+    "lr": null,
+    "batch_size": null,
+    "epochs": null,
+    "rnns_units": [
+        32
+    ],
+    "seeds": [
+        42,
+        42,
+        42,
+        42
+    ],
+    "l1": [],
+    "l2": [],
+    "droputs_rates": [
+        0.2
+    ],
+    "recurrent_dropouts_rates": [
+        0.2
+    ],
+    "optimizer": "adam",
+    "clip_norm": 1.0,
+    "num_classes": 2,
+    "name": "lstm_baseline_model",
+    "network_type": "WrappedRawModel",
+    "model_path": null,
+    "pretrained_model": null,
+    "feature_engeneering": null
+}
+----> Dataset Load.
+ [*] Loading Training Bins...
+ > Added bin: /content/drive/My Drive/bioinformatics/data-bioinformatics/bins_translated/bin_1_translated.csv, Done.
+ > Added bin: /content/drive/My Drive/bioinformatics/data-bioinformatics/bins_translated/bin_2_translated.csv, Done.
+ > Added bin: /content/drive/My Drive/bioinformatics/data-bioinformatics/bins_translated/bin_3_translated.csv, Done.
+ [*] Loading Validation Bins...
+ > Added bin: /content/drive/My Drive/bioinformatics/data-bioinformatics/bins_translated/bin_4_translated.csv, Done.
+ [*] Loading Test Bins...
+ > Added bin: /content/drive/My Drive/bioinformatics/data-bioinformatics/bins_translated/bin_5_translated.csv, Done.
+ [*] Dataset Load: Done.
+----> Preprocess Data.
+ [*] Preprocessing data...
+ [*] Preprocess Data: Done.
+----> Perform Analysis...
+{'maxlen': 1000, 'vocab_size': 5, 'embedding_size': 5, 'lr': 0.001, 'batch_size': 8, 'epochs': None, 'rnns_units': [32], 'seeds': [42, 42, 42, 42], 'l1': [], 'l2': [], 'droputs_rates': [0.2], 'recurrent_dropouts_rates': [0.2], 'optimizer': 'adam', 'clip_norm': 1.0, 'num_classes': 2, 'name': 'lstm_baseline_model', 'network_type': 'WrappedRawModel', 'model_path': '/content/drive/My Drive/bioinformatics/reports/2020_02_02/train_22_18_40/lstm_baseline_model', 'pretrained_model': None, 'feature_engeneering': None, 'sequence_type': 'dna', 'onehot_flag': 'dna'}
+ [*] Performing first phase (holdout)...
+Training on bins: [1, 2, 3], validation on [4]
+> build model (holdout).
+
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_layer (Masking)      (None, 1000)              0         
+_________________________________________________________________
+embedding_layer_in5_out5 (Em (None, 1000, 5)           25        
+_________________________________________________________________
+lstm (LSTM)                  (None, 32)                4864      
+_________________________________________________________________
+dense_activation_relu (Dense (None, 32)                1056      
+_________________________________________________________________
+dense_activation_sigmoid (De (None, 1)                 33        
+=================================================================
+Total params: 5,978
+Trainable params: 5,978
+Non-trainable params: 0
+_________________________________________________________________
+> train model (holdout)...
+> train model (holdout): Done.
+Trained for 11 epochs
+> eval model (holdout).
+loss:0.514638138898763, accuracy:0.7429805397987366, binary_crossentropy:0.5146381258964539, f1_m:0.6913574934005737, precision_m:0.8713254332542419, recall_m:0.600250780582428
+ [*] Performing first phase (holdout)... Done.
+trained for 1914.0 steps
+ [*] Perform Analysis: Done.

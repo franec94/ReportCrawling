@@ -1,0 +1,65 @@
+logger initialization done!
+[*] Running main at 20200203_142255
+[*] Running main, done.
+logger initialization done!
+[*] Running main at 20200203_142438
+[*] Running main, done.
+logger initialization done!
+[*] Running main at 20200203_142526
+[*] Running main, done.
+[*] Elapsed 0:00:00.005353 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_143658
+[*] Running main, done.
+[*] Elapsed 0:00:00.005548 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_143803
+setup_program() running...
+[*] Running main, done.
+[*] Elapsed 0:00:00.002103 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_143837
+setup_program() running...
+setup_program(), done.
+[*] Running main, done.
+[*] Elapsed 0:00:00.055680 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_143856
+setup_program() running...
+logs already exists.
+results already exists.
+setup_program(), done.
+[*] Running main, done.
+[*] Elapsed 0:00:00.004039 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_143914
+setup_program() running...
+Directory logs already exists.
+Directory results already exists.
+setup_program(), done.
+[*] Running main, done.
+[*] Elapsed 0:00:00.012825 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_143938
+setup_program() running...
+Directory 'logs' is not created, it already exists.
+Directory 'results' is not created, it already exists.
+setup_program(), done.
+[*] Running main, done.
+[*] Elapsed 0:00:00.003053 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_144047
+> setup_program() running...
+Directory 'logs' is not created, it already exists.
+Directory 'results' is not created, it already exists.
+> setup_program(), done.
+[*] Running main, done.
+[*] Elapsed 0:00:00.002698 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_144114
+f> setup_program() running...
+Directory 'logs' is not created, it already exists.
+Directory 'results' is not created, it already exists.
+f< setup_program(), done.
+[*] Running main, done.
+[*] Elapsed 0:00:00.003356 since the begging of script.

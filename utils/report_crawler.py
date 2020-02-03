@@ -11,12 +11,17 @@ from argparse import Namespace
 from utils.routine_tasks.custom_decorators import *
 from utils.routine_tasks.handle_files_content import *
 from utils.handle_namespace import get_and_save_namespace_obj
+from utils.handle_evaluation_values import  get_and_save_evaluation_values
 
 @log_debug_two_arguments
 def _process_file(file_name: str, cmd_args_obj, logger: logging.Logger):
 
   data_list: list = read_file_content_by_lines(file_name, logger)
   get_and_save_namespace_obj(data_list,
+    cmd_args_obj,
+    logger)
+
+  get_and_save_evaluation_values(data_list,
     cmd_args_obj,
     logger)
   pass

@@ -18,12 +18,12 @@ def create_latex_table(data_table_dict, cmd_args_obj, logger: logging.Logger):
 
   outputs_dir: str = cmd_args_obj.outputs_dir
 
-  path_table: str = os.path.join('.', 'namespace.tex')
+  path_table: str = os.path.join('.', 'evaluation_values_validation.tex')
   with open(path_table, "w") as f:
     f.write("\\begin{table}[]\n")
     f.write("\\begin{tabular}{|c|c|}\n")
     f.write('\\hline\n')
-    f.write('\\textbf{Args Name} & \\textbf{Value} \\\\')
+    f.write('\\textbf{Metric} & \\textbf{Value} \\\\')
     f.write('\\hline\n')
     for ii, (k,v) in enumerate(data_table_dict.items()):
       k = '\\_'.join([str(xi) for xi in str(k).split('_')])
@@ -35,33 +35,22 @@ def create_latex_table(data_table_dict, cmd_args_obj, logger: logging.Logger):
   pass
 
 @log_debug_two_arguments
-def get_and_save_namespace_obj(data_list: list, cmd_args_obj, logger: logging.Logger):
+def get_and_save_evaluation_values(data_list: list, cmd_args_obj, logger: logging.Logger):
 
   outputs_dir: str = cmd_args_obj.outputs_dir
 
-  result_list: list = list(filter(lambda xi: xi.startswith('Namespace'), data_list))
+  result_list: list = list(filter(lambda xi: xi.startswith('loss'), data_list))
 
-  # pprint(result_list)
+  if len(result_list) == 0:
+    err_statement: str = f"ERROR: metrics scores list not found"
+    logger.error(err_statement)
+    raise Exception(err_statement)
 
-  if len(result_list) > 1:
-    error_statement: str = "ERROR: report file contains multiple instances of NameSpace object!"
-    logger.error(error_statement)
-    raise Exception(error_statement)
+  pairs_scores_dict: dict = dict()
+  for item in result_list[0].split(','):
+    k, v = item.split(':')
+    pairs_scores_dict[k] = v
   
-  name_space = eval(result_list[0])
-  name_space_dict: dict = vars(name_space)
-  pprint(name_space_dict)
-
-
-  write_list_items_to_file(name_space_dict.keys(),
-      os.path.join(outputs_dir,'namespace_keys.txt'),
-    logger)
-
-  write_list_items_to_file(
-    name_space_dict.values(),
-    os.path.join(outputs_dir,
-    'namespace_values.txt'),
-    logger)
-
-  create_latex_table(name_space_dict, cmd_args_obj, logger)
+  pprint(pairs_scores_dict)
+  create_latex_table(pairs_scores_dict, cmd_args_obj, logger)
   pass

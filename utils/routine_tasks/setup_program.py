@@ -23,8 +23,7 @@ def create_dir(dir_name: str, logger: logging.Logger):
 
 @log_debug_one_argument
 def setup_program(cmd_args_obj, main_logger: logging.Logger):
-
-  create_dir(cmd_args_obj.logs_dir, main_logger)
+  
   create_dir(cmd_args_obj.outputs_dir, main_logger)
 
   pass

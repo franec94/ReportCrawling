@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+#-*- encoding: utf-8 -*-
+
 import os
 import sys
 import time
@@ -21,7 +24,7 @@ def main():
   # Get main logger
   main_logger: logging.Logger = \
     get_custom_logger(
-      cmd_args_obj.logs_dir,
+      '.',
       'main_logger',
       # cmd_args_obj.logging_level
       )

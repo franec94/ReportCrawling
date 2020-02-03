@@ -29,8 +29,11 @@ def create_latex_table(data_table_dict, headers_list, filename, cmd_args_obj, lo
 
   outputs_dir: str = cmd_args_obj.outputs_dir
 
-  path_table: str = os.path.join('.',
-  filename
+  path_table: str = \
+    os.path.join(
+      # '.',
+      outputs_dir,
+      filename
   )
   with open(path_table, "w") as f:
     f.write("\\begin{table}[]\n")

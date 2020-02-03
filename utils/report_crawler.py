@@ -18,6 +18,11 @@ from utils.report_targets.handle_architecture_params import get_and_save_network
 def _process_file(file_name: str, cmd_args_obj, logger: logging.Logger):
 
   data_list: list = read_file_content_by_lines(file_name, logger)
+
+  get_and_save_evaluation_values(data_list,
+    cmd_args_obj,
+    logger)
+  
   get_and_save_namespace_obj(data_list,
     cmd_args_obj,
     logger)

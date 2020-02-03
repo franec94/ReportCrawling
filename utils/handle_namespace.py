@@ -5,6 +5,8 @@ import logging
 import time
 import datetime
 
+import re
+
 from pprint import pprint
 from argparse import Namespace
 
@@ -16,14 +18,17 @@ def create_latex_table(data_table_dict, cmd_args_obj, logger: logging.Logger):
 
   outputs_dir: str = cmd_args_obj.outputs_dir
 
-  path_table: str = os.path.join(outputs_dir, 'namespace.tex')
+  path_table: str = os.path.join('.', 'namespace.tex')
   with open(path_table, "w") as f:
-    f.write("\\begin{table}[]")
-    f.write("\\begin{tabular}{ll}")
+    f.write("\\begin{table}[]\n")
+    f.write("\\begin{tabular}{ll}\n")
     for ii, (k,v) in enumerate(data_table_dict.items()):
-      f.write(f"{k} & {v} \\\\")
-    f.write("\\end{tabular}")
-    f.write("\\end{table}")
+      k = '\\_'.join([str(xi) for xi in str(k).split('_')])
+      v = '\\_'.join([str(xi) for xi in str(v).split('_')])
+      print(k)
+      f.write(f"{k} & {v} \\\\\n")
+    f.write("\\end{tabular}\n")
+    f.write("\\end{table}\n")
   pass
 
 @log_debug_two_arguments

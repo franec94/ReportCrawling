@@ -5,9 +5,9 @@ import logging
 import time
 import datetime
 
-from utils.parse_args_custom import get_cmd_line_args
-from utils.custom_logger import get_custom_logger
-from utils.setup_program import setup_program
+from utils.routine_tasks.parse_args_custom import get_cmd_line_args
+from utils.routine_tasks.custom_logger import get_custom_logger
+from utils.routine_tasks.setup_program import setup_program
 from utils.report_crawler import crawl
 
 def main():

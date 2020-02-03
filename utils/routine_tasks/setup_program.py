@@ -5,7 +5,7 @@ import logging
 import time
 import datetime
 
-from utils.custom_decorators import *
+from utils.routine_tasks.custom_decorators import *
 
 @log_debug_one_argument
 def create_dir(dir_name: str, logger: logging.Logger):

@@ -202,3 +202,37 @@ Directory 'logs' is not created, it already exists.
 Directory 'results' is not created, it already exists.
 [*] Running main, done.
 [*] Elapsed 0:00:00.061746 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_160034
+Directory 'logs' is not created, it already exists.
+Directory 'results' is not created, it already exists.
+logger initialization done!
+[*] Running main at 20200203_160059
+Directory 'logs' is not created, it already exists.
+Directory 'results' is not created, it already exists.
+[*] Running main, done.
+[*] Elapsed 0:00:00.007956 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_160228
+Directory 'logs' is not created, it already exists.
+Directory 'results' is not created, it already exists.
+[*] Running main, done.
+[*] Elapsed 0:00:00.007712 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_160939
+Directory 'logs' is not created, it already exists.
+Directory 'results' is not created, it already exists.
+[*] Running main, done.
+[*] Elapsed 0:00:00.025012 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_161017
+Directory 'logs' is not created, it already exists.
+Directory 'results' is not created, it already exists.
+[*] Running main, done.
+[*] Elapsed 0:00:00.078075 since the begging of script.
+logger initialization done!
+[*] Running main at 20200203_161504
+Directory 'logs' is not created, it already exists.
+Directory 'results' is not created, it already exists.
+[*] Running main, done.
+[*] Elapsed 0:00:00.057490 since the begging of script.

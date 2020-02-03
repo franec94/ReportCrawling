@@ -21,7 +21,7 @@ clear_logs_dir:
   @clear
   rm -fr $(LOGS_DIR)/*
 
-show_clar_all:
+show_clear_all:
   @clear
   @echo "rm -fr $(RESULTS_DIR)/*"
   @echo "rm -fr $(LOGS_DIR)/*"

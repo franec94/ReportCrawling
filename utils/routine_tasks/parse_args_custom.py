@@ -17,7 +17,7 @@ def _get_custom_parser() -> argparse.ArgumentParser:
   # Command line arguments owning default values.
   parser.add_argument('--outputs_dir', default="results", help='Output directory where the results will be stored. If not present thid directory will be created by the running script.', type=str)
 
-  parser.add_argument('--logs_dir', default="logs", help='Logs directory where the generated log files will be stored. If not present thid directory will be created by the running script.', type=str)
+  parser.add_argument('--logs_dir', default="logs", help='Logs directory where the generated log files will be stored. If not present this directory will be created by the running script.', type=str)
 
   choices_logging_level: list = list(map(lambda xi: xi.upper(), 'debug,warning,error'.split(',')))
   parser.add_argument('--logging_level',

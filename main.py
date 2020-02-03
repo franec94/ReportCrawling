@@ -8,6 +8,7 @@ import datetime
 from utils.parse_args_custom import get_cmd_line_args
 from utils.custom_logger import get_custom_logger
 from utils.setup_program import setup_program
+from utils.report_crawler import crawl
 
 def main():
   # Date at which main entry-point is invoked.
@@ -27,9 +28,11 @@ def main():
 
   main_logger.info(f'[*] Running main at {a_main_date_str}')
 
-  # setup program based on cmd args
+  # Setup program based on cmd args
   setup_program(cmd_args_obj, main_logger)
 
+  # Crawl input data based on cmd args
+  crawl(cmd_args_obj, main_logger)
 
   # log end main script
   end_time = datetime.datetime.now()

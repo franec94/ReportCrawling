@@ -1,0 +1,19 @@
+8
+False
+None
+False
+None
+WrappedRawModel
+0.001
+models/base_line_architectures/jsons/lstm_baseline_model.json
+25
+False
+/content/drive/My Drive/bioinformatics/reports/2020_02_02/train_22_18_40
+/content/drive/My Drive/bioinformatics/data-bioinformatics/bins_translated
+None
+1234
+dna
+None
+False
+False
+True

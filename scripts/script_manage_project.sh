@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 function show_action {
+  if [ $# -ne 2 ] ; then
+    echo "ERROR: show_action() expected 2 arguments"
+    exit -1
+  fi
   local target=$1
   local type_target=$2
   find ./ -type "${type_target}" -iname "${target}" \
@@ -10,6 +14,10 @@ function show_action {
 }
 
 function remove {
+  if [ $# -ne 2 ] ; then
+    echo "ERROR: remove() expected 2 arguments"
+    exit -1
+  fi
   local target=$1
   local type_target=$2
   find ./ -type "${type_target}" -iname "${target}" \
@@ -19,6 +27,11 @@ function remove {
 }
 
 function git_remove {
+  if [ $# -ne 2 ] ; then
+    echo "ERROR: remove() expected 2 arguments"
+    exit -1
+    exit -1
+  fi
   local target=$1
   local type_target=$2
   find ./ -type "${type_target}" -iname "${target}" \
@@ -37,9 +50,9 @@ elif [ $# -eq 3 ] ; then
   local target=$2
   local type_target=$3
   if [ "${flag}" == "--remove" ] ; then
-    remove $target $type_target
+    remove "${target}" "${type_target}"
   elif [ "${flag}" == "--git_remove" ] ; then
-    git_remove $target $type_target
+    git_remove "${target}" "${type_target}"
   fi
   unset flag
   unset target

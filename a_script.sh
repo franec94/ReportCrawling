@@ -37,9 +37,9 @@ elif [ $# -eq 3 ] ; then
   local target=$2
   local type_target=$3
   if [ "${flag}" == "--remove" ] ; then
-    remove $target $type_target
+    remove "${target}" "${type_target}"
   elif [ "${flag}" == "--git_remove" ] ; then
-    git_remove $target $type_target
+    git_remove "${target}" "${type_target}"
   fi
   unset flag
   unset target

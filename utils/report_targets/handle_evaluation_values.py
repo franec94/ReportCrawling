@@ -14,6 +14,8 @@ from utils.routine_tasks.custom_decorators import *
 from utils.routine_tasks.handle_files_content import *
 from utils.report_targets.create_latex_table import create_latex_table
 
+from utils.tables_spredsheets.metrics_table import create_table_metrics
+
 @log_debug_two_arguments
 def _create_latex_table(data_table_dict, cmd_args_obj, logger: logging.Logger):
 
@@ -58,4 +60,11 @@ def get_and_save_evaluation_values(data_list: list, cmd_args_obj, logger: loggin
     'evaluation_values_validation.tex',
     cmd_args_obj,
     logger)
+
+  pairs_scores_dict: dict = dict()
+  for item in result_list[0].split(','):
+    k, v = item.split(':')
+    pairs_scores_dict[k] = list(v)
+  
+  create_table_metrics(data=pairs_scores_dict)
   pass

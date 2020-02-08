@@ -1,0 +1,35 @@
+[[package]]
+category = "main"
+description = "Screen-scraping library"
+name = "beautifulsoup4"
+optional = false
+python-versions = "*"
+version = "4.8.2"
+
+[package.dependencies]
+soupsieve = ">=1.2"
+
+[[package]]
+category = "main"
+description = "A modern CSS selector implementation for Beautiful Soup."
+name = "soupsieve"
+optional = false
+python-versions = "*"
+version = "1.9.5"
+
+[[package]]
+category = "main"
+description = "A Python module for creating Excel XLSX files."
+name = "xlsxwriter"
+optional = false
+python-versions = "*"
+version = "1.2.7"
+
+[metadata]
+content-hash = "fe75d24596ddcc3b599448bef41b43ad15c30edcd8069e340fb962f2fd6c28b3"
+python-versions = "^3.7"
+
+[metadata.hashes]
+beautifulsoup4 = ["05fd825eb01c290877657a56df4c6e4c311b3965bda790c613a3d6fb01a5462a", "9fbb4d6e48ecd30bcacc5b63b94088192dcda178513b2ae3c394229f8911b887", "e1505eeed31b0f4ce2dbb3bc8eb256c04cc2b3b72af7d551a4ab6efd5cbe5dae"]
+soupsieve = ["bdb0d917b03a1369ce964056fc195cfdff8819c40de04695a80bc813c3cfa1f5", "e2c1c5dee4a1c36bcb790e0fabd5492d874b8ebd4617622c4f6a731701060dda"]
+xlsxwriter = ["18fe8f891a4adf7556c05d56059e136f9fbce5b19f9335f6d7b42c389c4592bc", "5d3630ff9b2a277c939bd5053d0e7466499593abebbab9ce1dc9b1481a8ebbb6"]

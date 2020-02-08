@@ -36,8 +36,21 @@ def _add_table(data: dict, data_table, worksheet):
 
   return start_letter, start_offset, end_letter, end_offset
 
+def _create_rows(data: dict):
+  
+
+  max_len = max(list(map(lambda xi: len(xi), data.values())))
+
+  tmp_list = [ [] for _ in range(max_len)]
+
+  for k, v in data.items():
+    for ii, xi in enumerate(v):
+      tmp_list[ii].append(xi)
+
+  return tmp_list
+
 def _fill_table(data: dict, worksheet):
-  data_table = [ data[k] for k in data.keys()]
+  data_table = _create_rows(data)
   start_letter, start_offset, end_letter, end_offset = \
     _add_table(data, data_table, worksheet)
   pass

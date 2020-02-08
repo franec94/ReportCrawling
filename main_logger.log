@@ -38,3 +38,8 @@ logger initialization done!
 Directory 'results' is not created, it already exists.
 [*] Running main, done.
 [*] Elapsed 0:00:00.119524 since the begging of script.
+logger initialization done!
+[*] Running main at 20200208_105329
+Directory 'results' is not created, it already exists.
+[*] Running main, done.
+[*] Elapsed 0:00:00.079702 since the begging of script.

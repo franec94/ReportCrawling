@@ -8,10 +8,12 @@ def _add_table(data: dict, data_table, worksheet):
   letters = list(map(lambda xi: xi.upper(), letters))
 
   start_letter = letters[1]
-  end_letter = letters[len(data.keys()) + 1]
+  end_letter = letters[len(data.keys())+1] 
 
   start_offset: int = 3
-  end_offset: int = start_offset + len(data.keys())
+
+  max_len = max(list(map(lambda xi: len(xi), data.values())))
+  end_offset: int = start_offset + max_len + 1
 
   
   pos_table = f"{start_letter}{start_offset}:${end_letter}${end_offset}"
@@ -25,11 +27,18 @@ def _add_table(data: dict, data_table, worksheet):
 
   columns = list(map(lambda xi: map_2_column(xi), data.keys()))
   
+  max_len = max(list(map(lambda xi: len(xi), data.values())))
+  
+  columns = [{'header': 'run no.', 'total_string': 'AVG'}] + columns
+  data_table = [ [str(xi)] + data_table[xi] for xi in range(max_len) ]
   worksheet.add_table(
     pos_table,
     {
       'data': data_table,
+      # 'total_row': True,
       'total_row': 1,
+      'banded_columns': True,
+      'banded_rows': True,
       'columns': columns}
     )
 

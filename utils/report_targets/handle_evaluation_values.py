@@ -64,7 +64,8 @@ def get_and_save_evaluation_values(data_list: list, cmd_args_obj, logger: loggin
   pairs_scores_dict: dict = dict()
   for item in result_list[0].split(','):
     k, v = item.split(':')
-    pairs_scores_dict[k] = list(v)
+    xi = pairs_scores_dict.setdefault(k, list())
+    xi.append(v)
   
   create_table_metrics(data=pairs_scores_dict)
   pass

@@ -43,9 +43,10 @@ def _create_rows(data: dict):
 
   tmp_list = [ [] for _ in range(max_len)]
 
+  print(data.values())
   for k, v in data.items():
     for ii, xi in enumerate(v):
-      tmp_list[ii].append(xi)
+      tmp_list[ii].append(float(xi))
 
   return tmp_list
 
